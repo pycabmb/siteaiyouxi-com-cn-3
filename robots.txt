@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://pycabmb.github.io/siteaiyouxi-com-cn-3/sitemap.xml
