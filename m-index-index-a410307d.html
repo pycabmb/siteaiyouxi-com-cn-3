@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>日常对照 · 澳客视角</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Roboto', system-ui, -apple-system, sans-serif;
+            background: linear-gradient(145deg, #fce9d8 0%, #f7d9c4 40%, #f2cdb0 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem 1.5rem;
+            line-height: 1.6;
+            color: #3b2c1e;
+        }
+
+        .page-card {
+            max-width: 820px;
+            width: 100%;
+            background: rgba(255, 250, 244, 0.92);
+            backdrop-filter: blur(3px);
+            border-radius: 48px 48px 36px 36px;
+            box-shadow: 0 12px 32px rgba(140, 80, 30, 0.12), 0 4px 12px rgba(100, 60, 20, 0.08);
+            padding: 2.8rem 2.5rem;
+            transition: all 0.2s ease;
+        }
+
+        @media (max-width: 560px) {
+            body {
+                padding: 1.2rem 0.8rem;
+            }
+            .page-card {
+                padding: 2rem 1.2rem;
+                border-radius: 32px 32px 24px 24px;
+            }
+        }
+
+        .hero-tag {
+            display: inline-block;
+            background: #e3cbb2;
+            color: #4d331f;
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            padding: 0.3rem 1.2rem;
+            border-radius: 60px;
+            margin-bottom: 1.4rem;
+            text-transform: uppercase;
+            opacity: 0.85;
+        }
+
+        h1 {
+            font-size: 2.3rem;
+            font-weight: 500;
+            letter-spacing: -0.01em;
+            color: #3e2a17;
+            margin-bottom: 0.75rem;
+            line-height: 1.2;
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.9rem;
+            }
+        }
+
+        .opener {
+            font-size: 1.15rem;
+            color: #5b4231;
+            margin: 1.4rem 0 1rem 0;
+            border-left: 4px solid #d9b89b;
+            padding-left: 1.2rem;
+            font-weight: 400;
+        }
+
+        .intro-text {
+            margin: 1.2rem 0 1.8rem 0;
+        }
+
+        .intro-text p {
+            margin-bottom: 1.1rem;
+        }
+
+        .highlight-link {
+            color: #b26d3c;
+            font-weight: 500;
+            text-decoration: none;
+            border-bottom: 2px solid #e7cbb1;
+            transition: border-color 0.2s, color 0.2s;
+            padding: 0 0.1rem;
+        }
+
+        .highlight-link:hover {
+            color: #7d4e2a;
+            border-bottom-color: #b87d51;
+        }
+
+        .feature-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            margin: 2.2rem 0 2rem 0;
+        }
+
+        .feature-item {
+            flex: 1 1 180px;
+            background: #fbf3ea;
+            border-radius: 28px;
+            padding: 1.4rem 1.2rem;
+            box-shadow: inset 0 1px 4px rgba(255, 242, 230, 0.6), 0 4px 8px rgba(110, 70, 35, 0.06);
+        }
+
+        .feature-item .icon-symbol {
+            display: block;
+            font-size: 1.6rem;
+            margin-bottom: 0.4rem;
+            color: #b68057;
+        }
+
+        .feature-item h3 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #412f1e;
+            margin-bottom: 0.3rem;
+        }
+
+        .feature-item p {
+            font-size: 0.92rem;
+            color: #5f4a36;
+        }
+
+        .section-divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #dcc2aa, transparent);
+            margin: 1.8rem 0;
+        }
+
+        .scene-block {
+            background: #f7ede2;
+            padding: 1.6rem 1.8rem;
+            border-radius: 28px;
+            margin: 1.8rem 0;
+        }
+
+        .scene-block h2 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #3d2b1a;
+            margin-bottom: 0.6rem;
+        }
+
+        .scene-block ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .scene-block li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.6rem;
+            position: relative;
+        }
+
+        .scene-block li::before {
+            content: "·";
+            position: absolute;
+            left: 0.3rem;
+            color: #b68057;
+            font-weight: bold;
+            font-size: 1.4rem;
+            line-height: 1;
+        }
+
+        .tip-box {
+            background: #e7d5c2;
+            border-radius: 24px;
+            padding: 1.6rem 1.8rem;
+            margin: 2rem 0 1.2rem;
+            color: #362616;
+        }
+
+        .tip-box p {
+            font-size: 0.98rem;
+        }
+
+        .faq-mini {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            margin: 1.8rem 0 1rem;
+        }
+
+        .faq-q {
+            font-weight: 500;
+            color: #4e3623;
+            border-bottom: 1px dashed #cdb39b;
+            padding-bottom: 0.3rem;
+        }
+
+        .faq-a {
+            color: #4e3a28;
+            font-size: 0.95rem;
+            margin-left: 0.6rem;
+        }
+
+        .closing-note {
+            margin-top: 2rem;
+            padding: 1.2rem 0 0.2rem;
+            border-top: 1px solid #e0cdb8;
+            font-size: 0.95rem;
+            color: #4f3e2d;
+        }
+
+        .button-link {
+            display: inline-block;
+            background: #cfab8b;
+            color: #2c1f12;
+            font-weight: 500;
+            padding: 0.45rem 1.4rem;
+            border-radius: 60px;
+            text-decoration: none;
+            transition: background 0.2s, transform 0.1s;
+            border: none;
+            box-shadow: 0 2px 6px rgba(140, 80, 30, 0.1);
+            font-size: 0.95rem;
+        }
+
+        .button-link:hover {
+            background: #c09875;
+            transform: scale(1.02);
+        }
+
+        .button-link:active {
+            transform: scale(0.97);
+        }
+
+        .inline-cta {
+            margin: 1.2rem 0 0.4rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-card">
+        <div class="hero-tag">📖 日常对照 · 延伸阅读</div>
+        <h1>查询、对照、延伸</h1>
+        <div class="opener">
+            翻开一个名字，往往不只是查找一个结果。
+        </div>
+
+        <div class="intro-text">
+            <p>每天都有许多时刻，我们想确认某个数字、回顾一段趋势，或是将手边的信息与更广的数据作比较。这时候，一个清晰、克制的工具比什么都重要。<a href="https://m-index-aoke.com" class="highlight-link">澳客</a> 所搭建的，正是这样一个偏向于「查阅与对照」的界面——它不喧哗，不催促，只是安静地陈列信息，等待使用者自己做出判断。</p>
+            <p>从单一查询到横向比较，再到顺着线索延伸阅读，整个过程像在翻阅一本随手注解的册子。没有弹窗干扰，没有浮夸的引导，只有数据和条目本身的逻辑。</p>
+        </div>
+
+        <div class="feature-grid">
+            <div class="feature-item">
+                <span class="icon-symbol">🔍</span>
+                <h3>多向检索</h3>
+                <p>支持按关键词、编号或组合条件筛选，结果直接呈现，不绕弯。</p>
+            </div>
+            <div class="feature-item">
+                <span class="icon-symbol">📋</span>
+                <h3>对照视图</h3>
+                <p>并排展示相关条目，差异与共性一目了然，便于快速比较。</p>
+            </div>
+            <div class="feature-item">
+                <span class="icon-symbol">🔗</span>
+                <h3>延伸线索</h3>
+                <p>每个条目下附带关联参考，方便顺着脉络继续深入浏览。</p>
+            </div>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <div class="scene-block">
+            <h2>📌 几个常见的使用场景</h2>
+            <ul>
+                <li>日常核对：打开页面，输入手头的编号，几秒内获得对照信息。</li>
+                <li>趋势回溯：查看历史数据变化，而不只是孤立的一个点。</li>
+                <li>交叉参考：同时打开多个条目，横向观察异同，辅助判断。</li>
+                <li>延伸阅读：从一条记录出发，顺着关联链接浏览更多背景内容。</li>
+            </ul>
+        </div>
+
+        <div class="faq-mini">
+            <div class="faq-q">❓ FAQ 摘要 · 这个页面适合谁？</div>
+            <div class="faq-a">适合习惯自己查找、自己对比、不依赖推送式信息的人。无论是快速确认，还是花时间慢慢翻阅，界面都不会催促你。</div>
+            <div class="faq-q">❓ 与普通查询站有什么不同？</div>
+            <div class="faq-a">更侧重于对照与延伸。每个结果都附带可展开的关联线索，而非孤立答案。同时视觉清爽，没有抢占注意力的装饰。</div>
+        </div>
+
+        <div class="tip-box">
+            <p>💡 小提示：试着将两三个相关条目并排打开，你会发现很多单独查看时容易忽略的细节。对照本身就是一种发现。</p>
+        </div>
+
+        <div class="closing-note">
+            <p>翻阅、对照、延伸 —— 一个足够安静的页面，反而能让信息自己说话。如果需要从头开始探索，随时可以打开 <a href="https://m-index-aoke.com" class="highlight-link">澳客</a>，从一次简单查询出发。</p>
+            <div class="inline-cta">
+                <a href="https://m-index-aoke.com" class="button-link">澳客</a>
+            </div>
+            <p style="margin-top: 1.2rem; font-size: 0.85rem; color: #7d684f; opacity: 0.7;">—— 温和、开放，仅作查阅之用。</p>
+        </div>
+    </div>
+</body>
+</html>
