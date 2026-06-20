@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>威廉希尔 — 资料信息页</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      line-height: 1.6;
+      color: #1f2a3a;
+      background-color: #f4f6fa;
+    }
+    a { color: #2a7fae; text-decoration: none; border-bottom: 1px solid transparent; transition: 0.2s; }
+    a:hover { color: #1b5b7a; border-bottom-color: currentColor; }
+
+    /* hero */
+    .hero {
+      background: linear-gradient(145deg, #0b1a2b 0%, #1f3246 100%);
+      color: #e9edf2;
+      padding: 4rem 1.5rem 3.5rem;
+      text-align: center;
+      position: relative;
+    }
+    .hero h1 {
+      font-size: 2.6rem;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      margin-bottom: 1rem;
+    }
+    .hero p {
+      max-width: 680px;
+      margin: 0 auto;
+      color: #bac8dc;
+      font-size: 1.15rem;
+      line-height: 1.7;
+    }
+    .hero .badge {
+      display: inline-block;
+      margin-top: 1.8rem;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      padding: 0.4rem 1.2rem;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      color: #b6cae0;
+      letter-spacing: 0.3px;
+    }
+
+    /* 正文容器 */
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* 通用分块 */
+    .section {
+      padding: 3rem 0 2.5rem;
+      border-bottom: 1px solid #dce2ec;
+    }
+    .section:last-of-type {
+      border-bottom: none;
+    }
+    .section h2 {
+      font-size: 1.7rem;
+      font-weight: 500;
+      color: #0f1e30;
+      margin-bottom: 1.2rem;
+      letter-spacing: -0.3px;
+    }
+    .section h3 {
+      font-size: 1.15rem;
+      font-weight: 500;
+      color: #1e334a;
+      margin: 1.5rem 0 0.6rem;
+    }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem 2.5rem;
+      margin-top: 0.5rem;
+    }
+    .card {
+      background: white;
+      border-radius: 14px;
+      padding: 1.6rem 1.8rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02), 0 1px 3px rgba(0,0,0,0.03);
+      transition: 0.2s;
+      border: 1px solid #eef1f6;
+    }
+    .card p {
+      color: #2d3e54;
+      margin-bottom: 0.5rem;
+    }
+    .card p:last-child { margin-bottom: 0; }
+    .card i {
+      display: inline-block;
+      font-style: normal;
+      background: #e2eaf3;
+      color: #1f3b57;
+      padding: 0.1rem 0.6rem;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      margin-right: 0.3rem;
+    }
+
+    /* 说明区（单列宽排） */
+    .explain-text {
+      background: white;
+      border-radius: 14px;
+      padding: 1.8rem 2rem;
+      border: 1px solid #eef1f6;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+    }
+    .explain-text p {
+      margin-bottom: 1rem;
+    }
+
+    /* FAQ摘要 */
+    .faq-item {
+      margin-bottom: 1.2rem;
+      padding: 0.8rem 1rem 0.8rem 1.8rem;
+      background: white;
+      border-radius: 10px;
+      border-left: 4px solid #93b4d3;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.02);
+    }
+    .faq-item strong {
+      display: block;
+      font-weight: 500;
+      color: #0b1f33;
+      margin-bottom: 0.2rem;
+    }
+    .faq-item p {
+      color: #2a405a;
+      font-size: 0.95rem;
+    }
+
+    /* 底部 */
+    .footer-links {
+      background: #e9edf5;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      color: #2f445d;
+      font-size: 0.9rem;
+    }
+    .footer-links a {
+      margin: 0 0.6rem;
+      color: #2a6f9a;
+    }
+    .footer-links .note {
+      margin-top: 0.6rem;
+      font-size: 0.8rem;
+      color: #5a6f86;
+    }
+
+    /* 响应式 */
+    @media (max-width: 740px) {
+      .hero h1 { font-size: 2rem; }
+      .hero p { font-size: 1rem; }
+      .grid-2 { grid-template-columns: 1fr; gap: 1.2rem; }
+      .section h2 { font-size: 1.4rem; }
+      .card { padding: 1.3rem; }
+    }
+    @media (max-width: 480px) {
+      .hero { padding: 3rem 1rem 2.5rem; }
+      .container { padding: 0 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- hero 区 -->
+  <section class="hero">
+    <h1>威廉希尔 &nbsp;·&nbsp; 信息参考</h1>
+    <p>一份对日常查询、对照阅读与延伸了解有帮助的整理页面。<br>不构成建议或推广，仅作事实性内容汇集。</p>
+    <span class="badge">参考·说明·资料</span>
+  </section>
+
+  <div class="container">
+
+    <!-- 优势 / 特点区 -->
+    <section class="section">
+      <h2>常见查询场景</h2>
+      <div class="grid-2">
+        <div class="card">
+          <p><i>📋</i> 日常对照</p>
+          <p>许多人在需要快速了解一个品牌背景时，会查找结构清晰的说明页。本页整理了一些基础信息和功能特点，便于对比和查阅。</p>
+        </div>
+        <div class="card">
+          <p><i>🔍</i> 延伸阅读</p>
+          <p>从平台结构、服务类型到常见问题，页面内容围绕信息检索习惯编排。如果想直接访问官网，可参考句子中的链接：<a href="https://home--williamhill.com">威廉希尔</a>。</p>
+        </div>
+        <div class="card">
+          <p><i>📌</i> 结构化信息</p>
+          <p>将零散的资料按“功能—说明—提示”的方式整理，便于快速定位自己关心的部分，减少反复搜索的时间。</p>
+        </div>
+        <div class="card">
+          <p><i>🧩</i> 多角度切入</p>
+          <p>无论你是第一次接触，还是需要补充细节，这里都尝试从使用流程、内容覆盖、常见疑问等方向提供参考。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 说明区：从日常查询、对照和延伸阅读的角度 -->
+    <section class="section">
+      <h2>从日常查询与对照说起</h2>
+      <div class="explain-text">
+        <p>在日常浏览中，许多人习惯先看“这个页面能提供什么信息”。基于这种需要，本页围绕与 <a href="https://home--williamhill.com">威廉希尔</a> 相关的基础资料进行客观整理。内容主要涵盖：平台常见功能描述、界面结构特点、使用前可留意的提醒，以及部分用户经常提出的问题摘要。</p>
+        <p>对照是获取可靠信息的重要方法。通过并列展示不同维度的内容（如基础功能、访问方式、注意事项），阅读者可以更高效地形成自己的判断。以下部分延续这一思路，避免过度解读，仅将公开可查的信息做结构化呈现。</p>
+        <p>同时，延伸阅读的价值在于提供上下文。例如 FAQ 摘选取自用户讨论中反复出现的主题，而非主观推测。所有表述均以“整理事实”为原则，不包含诱导或承诺性语句。</p>
+      </div>
+    </section>
+
+    <!-- 说明区2：特点+场景 -->
+    <section class="section">
+      <h2>特点与使用场景简述</h2>
+      <div class="grid-2">
+        <div class="card">
+          <p><strong>多端适配</strong></p>
+          <p>页面在手机、平板和桌面浏览器上均能正常阅读，文字与卡片结构随屏幕宽度调整，保持清晰排版。</p>
+        </div>
+        <div class="card">
+          <p><strong>信息模块化</strong></p>
+          <p>将内容拆分为 hero、卡片、说明段落、FAQ 摘要等区块，每个区域独立聚焦一个侧面，方便直接定位。</p>
+        </div>
+        <div class="card">
+          <p><strong>克制用语</strong></p>
+          <p>不使用夸张形容词或暗示结果。所有描述均基于常见使用场景和通用功能，不提供主观保证。</p>
+        </div>
+        <div class="card">
+          <p><strong>直接跳转</strong></p>
+          <p>句子中嵌入的链接指向 <a href="https://home--williamhill.com">威廉希尔</a>，方便需要进一步浏览的用户自行选择。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ 摘要 -->
+    <section class="section">
+      <h2>FAQ 摘要</h2>
+      <div class="faq-item">
+        <strong>这个页面是官方网站吗？</strong>
+        <p>不是。本页为独立整理的参考性资料页，与任何品牌方无关联。官网地址已在前文句子中以链接形式标出。</p>
+      </div>
+      <div class="faq-item">
+        <strong>为什么内容看起来比较简洁？</strong>
+        <p>为了便于对照和快速阅读，信息经过了筛选和分类。如果想了解更详细或最新的内容，建议直接浏览 <a href="https://home--williamhill.com">威廉希尔</a> 网站。</p>
+      </div>
+      <div class="faq-item">
+        <strong>信息会更新吗？</strong>
+        <p>本页作为静态介绍页，内容在发布时基于常见公开资料整理。如有变化，请以官方渠道为准。</p>
+      </div>
+      <div class="faq-item">
+        <strong>页面中的链接安全吗？</strong>
+        <p>链接指向的域名已在页面开头标明。用户可根据自身判断决定是否访问，本页不收集任何数据。</p>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- 底部链接区 -->
+  <footer class="footer-links">
+    <p>
+      <a href="https://home--williamhill.com">威廉希尔</a> &nbsp;·&nbsp; 
+      <a href="#">资料索引（占位）</a> &nbsp;·&nbsp; 
+      <a href="#">常见问题</a> &nbsp;·&nbsp; 
+      <span>仅供信息参考</span>
+    </p>
+    <p class="note">本页面为独立整理内容，不构成任何推荐或保证。使用前请自行核实最新信息。</p>
+  </footer>
+
+</body>
+</html>
